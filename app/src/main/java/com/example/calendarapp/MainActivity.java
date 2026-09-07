@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.CalendarView;
+import android.widget.DatePicker;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,9 +17,9 @@ import androidx.core.view.WindowInsetsCompat;
 import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
-     TextView textViewDate;
-     CalendarView dpGetDate;
-     Button btnDate;
+     TextView   textViewDate;
+     DatePicker dpGetDate;
+     Button     btnDate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,26 +33,23 @@ public class MainActivity extends AppCompatActivity {
         });
 
         textViewDate = findViewById(R.id.textView);
-        dpGetDate    = findViewById(R.id.calendarView);
+        dpGetDate    = findViewById(R.id.datePicker);
         btnDate      = findViewById(R.id.button);
 
         btnDate.setOnClickListener(v -> {
-            long data = dpGetDate.getDate();
-
-            Calendar calendar = Calendar.getInstance();
-            calendar.setTimeInMillis(data);
-
-            Log.i("getDate", "getDateOk");
-
-            Toast.makeText(this, "kliknięto przycisk", Toast.LENGTH_SHORT).show();
-
-            int day   = calendar.get(Calendar.DAY_OF_MONTH);
-            int month = calendar.get(Calendar.MONTH) + 1;
-            int year  = calendar.get(Calendar.YEAR);
-
-            String formattedDate = String.format("%02d.%02d.%dr.", day, month, year);
-            textViewDate.setText(formattedDate);
+            textViewDate.setText(getDate());
         });
+    }
 
+    public String getDate() {
+        Log.i("getDate", "getDateOK");
+
+        Toast.makeText(this, "Kliknięto przycisk!", Toast.LENGTH_LONG).show();
+
+        int day   = dpGetDate.getDayOfMonth();
+        int month = dpGetDate.getMonth() + 1;
+        int year  = dpGetDate.getYear();
+
+        return String.format("%02d.%02d.%dr", day, month, year);
     }
 }
