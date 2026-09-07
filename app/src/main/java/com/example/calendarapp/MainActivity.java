@@ -17,9 +17,9 @@ import androidx.core.view.WindowInsetsCompat;
 import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
-     TextView   textViewDate;
-     DatePicker dpGetDate;
-     Button     btnDate;
+     private TextView   textViewDate;
+     private DatePicker dpGetDate;
+     private Button     btnDate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

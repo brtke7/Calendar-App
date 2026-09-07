@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Calendar App</string>
+    <string name="date_text">Pobierz Datę</string>
+    <string name="show_date">Pokaż Datę</string>
 </resources>
