@@ -2,7 +2,7 @@ package com.example.calendarapp;
 
 import android.os.Bundle;
 import android.widget.Button;
-import android.widget.DatePicker;
+import android.widget.CalendarView;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -12,9 +12,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
  public class MainActivity extends AppCompatActivity {
-
      TextView textViewDate;
-     DatePicker dpGetDate;
+     CalendarView dpGetDate;
      Button btnDate;
 
     @Override
