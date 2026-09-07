@@ -2,6 +2,7 @@ package com.example.calendarapp;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.DatePicker;
@@ -39,6 +40,8 @@ public class MainActivity extends AppCompatActivity {
         btnDate.setOnClickListener(v -> {
             textViewDate.setText(getDate());
         });
+
+//        btnDate.setOnClickListener(this::getDate);
     }
 
     public String getDate() {
@@ -52,4 +55,17 @@ public class MainActivity extends AppCompatActivity {
 
         return String.format("%02d.%02d.%dr", day, month, year);
     }
+
+//    public void getDate(View v) {
+//        Log.i("getDate", "getDateOK");
+//
+//        Toast.makeText(this, "Kliknięto przycisk!", Toast.LENGTH_LONG).show();
+//
+//        int day   = dpGetDate.getDayOfMonth();
+//        int month = dpGetDate.getMonth() + 1;
+//        int year  = dpGetDate.getYear();
+//
+//        textViewDate.setText(String.format("%02d.%02d.%dr", day, month, year));
+//    }
+//
 }
